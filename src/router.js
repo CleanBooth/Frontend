@@ -19,10 +19,11 @@ function router() {
             <Routes>
                 <Route path="/" element={<Main />} /> 
                 <Route path="/menu/1" element={<Main />} /> 
-                <Route path="/menu/2" element={<NutritionSearch />} /> 
+                <Route path="/menu/2/:id" element={<NutritionSearch />} /> 
+                <Route path="/nutrition/:id" component={<NutritionSearch/>} />
                 <Route path="/menu/4" element={<CleanExperience />} />
-                <Route path="/CleanApplication" element={<CleanApplication/>} />
-                <Route path="/CleanExperienceProduct" element={<CleanExperienceProduct/>} />
+                <Route path="/CleanApplication/:index" element={<CleanApplication/>} />
+                <Route path="/CleanExperienceProduct/:index" element={<CleanExperienceProduct/>} />
                 <Route path="/CleanApplicationComplete" element={<CleanApplicationComplete/>} />
                 <Route path="/Login" element={<Login />} /> 
                 <Route path="/Loading" element={<Loading />} />

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState ,useNavigate,useHistory} from 'react';
 import './Gnb.css';
 import { Link } from 'react-router-dom';
 const Gnb = () => {
@@ -37,7 +37,6 @@ const Gnb = () => {
   ];
 
   const [selectedMenuId, setSelectedMenuId] = useState(null);
-
   const handleMenuClick = (id) => {
     setSelectedMenuId(id);
   };
@@ -61,16 +60,16 @@ const Gnb = () => {
                 <div className="message">{menu.label}</div>
                 {menu.subMenu.map((subMenu) => (
                   <li key={subMenu.id}>
-                    <a href='' onClick={() => handleMenuClick(subMenu.id)}>
+                    <Link to={`/menu/2/:id`} onClick={() => handleMenuClick(subMenu.id)}>
                       <span className="subMenuLabel">{subMenu.label}</span>
-                    </a>
+                    </Link>
                     {subMenu.subSubMenu && subMenu.subSubMenu.length > 0 && (
                       <ul className='depth3'>
                         {subMenu.subSubMenu.map((subSubMenu) => (
                           <li key={subSubMenu.id}>
-                            <a href=''>
+                            <Link to ={`/menu/2/:id`}>
                               <span className="subSubMenuLabel">{subSubMenu}</span>
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>

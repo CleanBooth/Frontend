@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const CleanApplicationComplete = () => {
     return(
         <div className='background'>
-              <div className='background_short_round'>
+            <div className='background_short_round'>
             <LoginHeader/>
             <div className='bigBox'>
                 <Gnb/>

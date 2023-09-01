@@ -48,7 +48,7 @@
     width: 288px;
     height: 300px;
 }
-.recruitment{
+.isTesting{
     width: 40px;
     height: 17px;
     font-size: 14px;
@@ -60,7 +60,7 @@
     border-color:#009f50;
     color: black;
 }
-.clean_product_ul .name{
+.clean_product_ul .itemName{
     font-size: 16px;
     font-weight: medium;
 }

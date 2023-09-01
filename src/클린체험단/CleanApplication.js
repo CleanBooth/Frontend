@@ -1,9 +1,8 @@
-import { useState, useRef } from 'react';
-import {  Link } from 'react-router-dom';
+import { useState, useRef, useEffect } from 'react';
+import {  Link, useParams } from 'react-router-dom';
 import './CleanApplication.css';
 import React from 'react';
 import LoginHeader from '../공통/LoginHeader';
-import Header from '../공통/Header';
 import Footer from '../공통/Footer';
 import Gnb from '../공통/Gnb';
 import img from '../사진/Rectangle 213.png'
@@ -12,6 +11,7 @@ import PopupPostCode from './PopupPostCode';
 import Modal from './Modal';
 import Select from "react-select";
 import img1 from'./Frame 82.png'
+import CleanApplicationProduct from './ClaenApplicationProduct';
 
 let delivery_options = [
     { value: "1", label: "부재시 집 앞에 놓아주세요" },
@@ -25,6 +25,7 @@ let product_options = [
     { value: "3", label: "제품명" },
 ];
 const CleanApplication = () => {
+
     const [nameValue, setName] = useState('');
     const [numberValue, setNumber] = useState('');
     const [addressValue, setAddress] = useState('');
@@ -91,7 +92,31 @@ const CleanApplication = () => {
             fontSize: '14px', 
         }),
     };
-    
+
+    const [itemName, setItemName] = useState(""); // 제품명
+    const [endDate, setEndDate] = useState(""); // 종료 날짜
+    const [content, setContent] = useState(""); // 제품 설명
+    const [isTesing, setIsTesing] = useState(false); // 테스트 여부
+    const [itemImage, setItemImage] = useState(""); // 제품 이미지 경로
+    const [options, setOptions] =useState("");
+
+    const { index } = useParams();
+    useEffect(() => {
+        fetch(`http://43.202.77.82:8080/tester/${index}`, { method: 'GET'})
+            .then(response => response.json())
+            .then(data => {
+                setItemName(data.itemName);
+                setEndDate(data.endDate);
+                setContent(data.content);
+                setItemImage(data.itemImage);
+                setOptions(data.options);
+                setIsTesing(data.isTesing);
+                console.log(data)
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    }, []);
     return(
         <div className='background'>
             <div className='background_short_round'>
@@ -101,16 +126,20 @@ const CleanApplication = () => {
                 <hr className='application_clean_hr'/>
                 <p className='application_clean'> 클린 체험단 신청하기 </p>
                 <div className='application'>
-                    <button className='share_button'>
-                            <img src={img1} alt="Share Button" style={{ width: '30px', height: '30px' }} />
-                    </button>
-                    <div className='application_1'>
-                        <img src={img} className="application_product_img"></img>
-                        <div>
-                            <p className='recruitment_application'> 모집 여부</p> <p className='name_application'> 제품명 </p> 
-                            <p className='composition_application'> 제품 구성</p> <p className='year_application'>~YY/MM//DD</p>
-                        </div>
-                    </div>
+                <button className='share_button'>
+                <img src={img1} alt="Share Button" style={{ width: '30px', height: '30px' }} />
+                </button>
+                <div className='application_1'>
+                <img src={itemImage} className="application_product_img"></img>
+                <div>
+                    <p className='recruitment_application'>{isTesing}</p>
+                    <p className='name_application'>{itemName}</p>
+                    <p className='composition_application'>{content}</p>
+                    <p className='year_application'>{endDate}</p>
+                </div>
+            </div>
+
+                
                     <div className ="hr_application"> 배송지 정보 </div> 
                     <div className='application_2'>
                         <div>
@@ -189,7 +218,7 @@ const CleanApplication = () => {
             </div>
             <Footer/>
         </div>
-        </div>
+    </div>
     )
 }
 

@@ -74,6 +74,9 @@ const Header = () => {
     ));
   };
 
+  const handleValueChange = (e) => {
+    setInputText(e.target.value);
+  }
 
   return (
     <header>
@@ -85,8 +88,9 @@ const Header = () => {
           <input
             type="text"
             placeholder="검색어를 입력해주세요"
-            value={inputText}
-            onChange={onChange}
+            name="searchKeyword"
+            value={inputText} // 수정된 부분
+            onChange={handleValueChange} // 수정된 부분
             onKeyPress={onKeyPress}
             onFocus={() => setSearchActive(true)}
             onBlur={() => setSearchActive(false)}

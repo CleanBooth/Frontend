@@ -1,6 +1,5 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import LoginHeader from '../공통/LoginHeader.js';
-import Header from '../공통/Header.js';
 import Footer from '../공통/Footer.js';
 import Gnb from '../공통/Gnb.js';
 import './CleanExperience.css';
@@ -12,46 +11,23 @@ import { Link } from 'react-router-dom';
 
 const CleanExperience = () => {
 
-    const cleanExperienceData = [
-        {
-          imgSrc: img1,
-          recruitment: '모집 중',
-          title: '제목',
-          period: '모집기간',
-        },
-        {
-            imgSrc: img1,
-            recruitment: '모집 중',
-            title: '제목',
-            period: '모집기간',
-          },
-          {
-            imgSrc: img1,
-            recruitment: '모집 중',
-            title: '제목',
-            period: '모집기간',
-          },
-          {
-            imgSrc: img1,
-            recruitment: '모집 중',
-            title: '제목',
-            period: '모집기간',
-          },
-          {
-            imgSrc: img1,
-            recruitment: '모집 중',
-            title: '제목',
-            period: '모집기간',
-          },
-          {
-            imgSrc: img1,
-            recruitment: '모집 중',
-            title: '제목',
-            period: '모집기간',
-          },
+  const [itemName, setItemName] = useState(""); // 제품명
+  const [itemImage, setItemImage] = useState(""); // 제품 이미지 경로
+  const [endDate, setEndDate] = useState(""); // 종료 날짜
+  const [isTesing, setIsTesing] = useState(false); // 테스트 여부
+  const[index,setIndex] =useState(0);
+  const [cleanExperienceData, setCleanExperienceData] = useState([]);
 
-        // 이하 다른 상품들의 데이터...
-      ];
+  useEffect(() => {
+    fetch('http://43.202.77.82:8080/tester', { method: 'GET'})
+        .then(response => response.json())
+        .then(data => {
+          setCleanExperienceData(data);
+        })
+    .catch(error => {
+        console.error(error);
+    });
+}, []);
     return(
         <div className='background'>
             <div className='background_long_round'>
@@ -75,23 +51,23 @@ const CleanExperience = () => {
                 </div>
                 <div>
                 <ul className="clean_product_ul">
-                    {cleanExperienceData.map((product, index) => (
-                    <li key={index}>
-                        <img src={product.imgSrc} className={`product_${index + 1}`} />
-                        <p className="recruitment"> {product.recruitment}</p>
-                        <p className="name"> {product.title} </p>
-                        <p className="year"> {product.period}</p>
-                        <Link to={{
-                            pathname: `/CleanExperienceProduct`,
-                            state: { product },
-                        }}>
-                            <button>신청하기</button>
-                        </Link>
-                    </li>
-                    ))}
-                </ul>
+                  {cleanExperienceData.map((product,index) => (
+                    <li key={product.id}>
+                    
+                    <img src={product.itemImage} className={`product_${index + 1}`} />
+                    <p className="isTesting">{product.isTesing ? '모집중':'모집완료' }</p>
+                    <p className="itemName">{product.itemName}</p>
+                    <p className="year">{product.endDate}</p>
+                  <Link to={{
+                    pathname:  `/CleanExperienceProduct/${index+1}`,
+                    state: { product, index },
+                  }}>
+                    <button>{product.isTesing ? "신청하기" : "마감되었습니다"}</button>
+                  </Link>
+                </li>
+                ))}
+              </ul>
             </div>
-
             </div>
         </div>
         <Footer/>

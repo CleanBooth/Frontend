@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState, useEffect}from 'react';
+import { useParams } from 'react-router-dom';
 import LoginHeader from '../공통/LoginHeader.js';
-import Header from '../공통/Header.js';
 import Footer from '../공통/Footer.js';
 import Gnb from '../공통/Gnb.js';
 import "./CleanExperienceProduct.css"
@@ -12,8 +12,32 @@ import img4 from "./Frame 82.png"
 function CleanExperienceProduct  () {
 
     const location = useLocation();
-    const product = location.state?.product;
 
+    const { index } = useParams();
+
+    const [itemName, setItemName] = useState(""); // 제품명
+    const [endDate, setEndDate] = useState(""); // 종료 날짜
+    const [content, setContent] = useState(""); // 제품 설명
+    const [isTesting, setIsTesting] = useState(true); // 테스트 여부
+    const [itemImage, setItemImage] = useState(""); // 제품 이미지 경로
+    const [detailImage, setDetailImage] = useState(""); // 상세 이미지 경로
+    
+    useEffect(() => {
+        fetch(`http://43.202.77.82:8080/tester/${(index)}`, { method: 'GET' })
+            .then(response => response.json())
+            .then(data => {
+                setItemName(data.itemName);
+                setEndDate(data.endDate);
+                setContent(data.content);
+                setItemImage(data.itemImage);
+                setDetailImage(data.detailImage);
+                setIsTesting(data.isTesting);
+                console.log(data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    },[index]);// id가 변경될 때마다 useEffect가 실행됨
     return(
         <div className='background'>
             <div className='background_long_round'>
@@ -24,13 +48,13 @@ function CleanExperienceProduct  () {
                 <div>
                 <p className='application_clean'> 클린 체험단 신청하기 </p>
                 <div className='experience_product'>
-                        <img src={img1} className="experience_product_img"></img>
+                        <img src={itemImage} className="experience_product_img"></img>
                         <div>
-                        <p className="recruitment_experience"> 모집중</p>
-                        <p className="name_experience"> 제목</p>
-                        <p className="composition_experience"> 제품구성</p>
-                        <p className="year_experience">~ YY/MM/DD </p>
-                            <Link to={{ pathname: '/CleanApplication', state: { product } }}> 
+                        <p className="recruitment_experience"> {isTesting ? "모집중" : "모집종료"}</p>
+                        <p className="name_experience"> {itemName}</p>
+                        <p className="composition_experience">{content}</p>
+                        <p className="year_experience">{endDate} </p>
+                            <Link to={{ pathname: `/CleanApplication/${index}` }}> 
                                 <button className="apply_button">신청하기</button>
                             </Link>
                         </div>

@@ -1,0 +1,1148 @@
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    background-color: white;
+    padding: 30px 20px;
+    color: black;
+    width: 70%;
+    /* 화면 가로의 70% 공간만 사용 */
+    margin: 0 auto;
+    /* 가운데 정렬을 위해 margin을 auto로 설정 */
+    border-top-left-radius: 10px;
+    /* 상단 왼쪽 둥근 모서리 반경 설정 */
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #ccc;
+    /* 아랫부분에 회색 선 경계를 만듭니다 */
+    justify-content: space-around;
+  }
+  
+  .navbar-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .navbar-item {
+    margin-right: 20px;
+    cursor: pointer;
+    padding: 0 10px;
+    text-align: left;
+  }
+  
+  .navbar-item:last-child {
+    margin-right: 0;
+    /* 마지막 항목은 오른쪽 마진을 제거하여 간격을 조정합니다 */
+    border-right: none;
+    /* 마지막 항목은 오른쪽 선을 제거합니다 */
+    
+  }
+  
+  /* 탭 ui부분 */
+  /* My Page */
+  .my-page {
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: gray;
+    
+  }
+  
+  /* Navigation Links */
+  
+  /*좌측 네비게이션 바*/
+ 
+  .bottompage {
+    width: 75%;
+    height: 1100px;
+    border-radius: 20px;
+    background-color: white;
+    text-align: left;
+    padding-top: 40px;
+    margin: 0 auto;
+    color: #000;
+  }
+  
+  .flex-column {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    border-radius: 5px; /* Add rounded corners */
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+    /* 탭의 기본 텍스트 색상을 검정색으로 설정 */
+    .nav-link {
+      color: black;
+      /* 검정색 텍스트 색상 */
+      font-weight: normal; /* 기본 텍스트 굵기 설정 */
+    }
+   
+  
+    /* 선택된 탭의 스타일을 수정 */
+    .nav-link.selected {
+      font-weight: bold;
+      color:black;
+      /* 선택된 탭의 텍스트 굵게 표시 */
+    }
+  .nav-links .nav-link {
+    border-top: 1px solid black; /* Add top border for each link */
+    padding: 10px 0;
+    color: black;
+    text-decoration: none;
+    transition: background-color 0.3s; /* Add smooth transition for background color change */
+  }
+  
+  .nav-links .nav-link:first-child {
+    border-top: none; /* Remove top border from the first link */
+  }
+  
+  .b-left-page {
+    padding-left: 50px;
+  }
+  
+  /* Styling for the right page */
+  .b-right-page {
+    flex: 1; /* Expand to take remaining space */
+    padding: 20px; /* Add padding */
+  }
+  
+  .selected {
+    background-color: #9ce3c9; /* Change background color to lightgreen for selected link */
+    border-radius: 5px;
+    outline: none;
+    color: black;
+    
+  }
+  
+  /* 서비스 이용약관 가로스크롤 */
+  .pre-container0,
+  .pre-container1,
+  .pre-container3,
+  .pre-container4,
+  .pre-container5,
+  .pre-container6,
+  .pre-container7 {
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    text-align: left;
+  }
+  .pre-container2{
+    text-align: left;
+  }
+  
+  .pre-content5,
+  .pre-content6 {
+    white-space: pre-wrap; /* Preserve whitespace and break lines */
+  }
+  
+  .pre-container0 hr,
+  .pre-container1 hr,
+  .pre-container3 hr,
+  .pre-container4 hr,
+  .pre-container5 hr,
+  .pre-container6 hr,
+  .pre-container7 hr {
+    border: 2px solid black; /* Adjust border thickness */
+  }
+  
+  .highlighted-number {
+    color: green; /* 숫자의 색상을 원하는 색상으로 변경 */
+}
+  /* 찜한상품 */
+  .product {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* 가로줄 추가 */
+  }
+  
+  .jjim-product-image {
+    width: 80px; /* 조정 가능한 이미지 크기 */
+    height: auto;
+  }
+  .product-info {
+    flex: 1;
+    margin-left: 10px;
+    display: flex;
+  }
+  
+  .product-brand {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .product-name {
+    font-size: 12px;
+  }
+  
+  
+  /* 찜한 레시피 */
+  
+  .recipe{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* 가로줄 추가 */
+  }
+  
+  .jjim-product-image {
+    width: 80px; /* 조정 가능한 이미지 크기 */
+    height: auto;
+  }
+  .recipe-info{
+    flex: 1;
+    margin-left: 10px;
+    display: flex;
+  }
+  
+  
+  .recipe-name{
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  
+  .delete-button,
+  .edit-button {
+    font-size: 12px;
+    background-color: transparent;
+    border: 1px solid #ccc; /* 테두리 스타일 설정 */
+    border-radius: 4px; /* 테두리 살짝 둥글게 설정 */
+    padding: 2px 6px; /* 버튼 내용과 테두리 사이의 여백 설정 */
+    cursor: pointer;
+    color: gray;
+    
+  }
+  
+  /* 클린체험단 버튼 */
+  
+  /* 전체 네비게이션 바에 대한 스타일 */
+  .preuser-nav {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    background-color: #f8f9fa; /* 밝은 회색 배경색 */
+    margin: 0 auto; /* 가운데 정렬 */
+    justify-content: space-between;
+  }
+  
+  .preuser-nav .nav-link {
+    flex: 0 1 50%; /* 버튼이 가로의 절반씩 차지하도록 설정 */
+    padding: 5px 173px; /* 패딩을 원하는 대로 조정하세요 */
+    background-color: #f8f9fa; /* 밝은 회색 배경색 */
+    color: #83888d; /* 어두운 회색 글씨 */
+    border: none; /* 테두리 없음 */
+    text-align: center;
+    border-radius: 0; /* 테두리 둥글기 제거 */
+    transition: background-color 0.3s, color 0.3s; /* 애니메이션 효과 */
+    font-weight: bold; /* 글꼴 두껍게 설정 */
+  }
+  
+  .preuser-nav .nav-link.active {
+    background-color: #fff; /* 흰색 배경색 */
+    color: #000; /* 검정색 글씨 */
+    font-weight: bold; /* 글꼴 두껍게 설정 */
+    border: 3px solid #28a745; /* 초록색 테두리 */
+    border-radius: 5px; /* 테두리 둥글기 */
+  }
+  
+  /* 각 네비게이션 링크에 대한 스타일 */
+  .preuser-link {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: transparent; /* 배경색 투명 */
+    color: #6c757d; /* 어두운 회색 글씨 */
+    border: 1px solid transparent; /* 초기에는 테두리 없음 */
+    border-radius: 0; /* 테두리 둥글기 없음 */
+    transition: all 0.3s; /* 애니메이션 효과 지정 */
+    width: 100%; /* 너비의 절반씩 차지 */
+  }
+  
+  /* 버튼이 선택됐을 때의 스타일 */
+  .preuser-link.active {
+    flex: 1;
+    background-color: #fff; /* 흰색 배경색 */
+    color: #000; /* 검정색 글씨 */
+    border-color: #28a745; /* 초록색 테두리 */
+  }
+  
+  /* gnb 스타일 */
+  /* GNB 스타일 */
+  
+  .gnb {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .gnb a {
+    text-decoration: none;
+    color: inherit;
+  }
+  ul {
+    list-style: none;
+  }
+  .gnb .depth1 {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .gnb .depth1 > li {
+    display: inline-block;
+    font-size: 14px;
+    padding: 0px 20px;
+    vertical-align: top;
+  }
+  .gnb .depth1 > li:hover > a {
+    color: #009f50;
+    border-bottom: 4px solid #009f50; /* 초록색 밑줄을 추가합니다. */
+  }
+  .gnb .depth1 > li > a {
+  }
+  
+  .gnb .depth2 {
+    display: none;
+    position: absolute;
+    padding: 40px;
+    width: 600px;
+    left: 40%;
+    transform: translateX(-50%);
+  }
+  
+  .gnb .depth1 > li:hover > .depth2 {
+    display: flex;
+  }
+  .gnb .depth2 li {
+    padding-top: 30px;
+    position: relative;
+    right: 100px;
+  }
+  
+  .gnb .depth1 > li:hover .depth2 li:hover > a {
+    padding: 10px 20px;
+    background: rgba(0, 159, 80, 0.5); /* 밑줄 색상 변경 */
+  }
+  
+  .gnb .depth3 {
+    display: none;
+    position: absolute;
+    padding-left: 0; /* 들여쓰기 제거 */
+    top: 16px;
+    left: 100%;
+  }
+  .gnb .depth3 li {
+    padding: 10px;
+    display: grid;
+    white-space: nowrap;
+  }
+  .gnb .depth2 li:hover > .depth3 {
+    display: flex;
+    left: 750px;
+  }
+  .gnb .depth2 li:hover > a + .depth3 {
+  }
+  .depth3 a:hover {
+    color: #009f50;
+  }
+  
+  .gnb .smallbox {
+    position: absolute;
+    width: 157%;
+    height: 300px;
+    background-color: white;
+    left: -87px;
+  }
+  .gnb .message {
+    font-size: 25px;
+    position: fixed;
+    top: 70px;
+    left: 50px;
+  }
+  
+  .middle-part {
+    display: flex;
+  }
+  
+
+  /* 클린체험단 */
+
+  /* 이미지 그리드 스타일 */
+.image-grid,
+.image-grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2열 */
+  gap: 10px; /* 간격 조정 */
+  margin-top: 20px;
+  
+}
+
+/* 각 이미지 항목 스타일 */
+.image-item,
+.image-item2 {
+  border: none;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 이미지 스타일 */
+.image-item img,
+.image-item2 img {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 좌측 정렬 */
+}
+
+/* 이미지 세부 정보 스타일 */
+.image-details,
+.image-details2 {
+ 
+   margin-top: auto; /* 나머지 공간을 위로 추가하여 이미지 하단에 정렬 */
+    background-color: rgba(255, 255, 255, 0.7); /* 텍스트의 배경색과 투명도 설정 */
+    padding: 5px; /* 텍스트와 컨테이너 사이의 간격 */
+    width: 100%; /* 컨테이너의 너비를 100%로 설정하여 이미지 폭에 맞춤 */
+    box-sizing: border-box; /* padding까지 포함한 너비 설정 */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 왼쪽 정렬 */
+}
+
+.image-details p,
+.image-details2 p {
+  margin: 5px 0;
+}
+
+.process1,
+.process2 {
+    color: white; /* 글씨를 흰색으로 설정 */
+    border-radius: 30px; /* 모서리를 둥글게 처리 */
+    padding: 2px 10px; /* 글씨와 배경 사이의 간격 설정 */
+    position: relative; /* 배경 박스를 기준으로 내부 요소를 배치하기 위해 설정 */
+    display: inline-block; /* inline-block 요소로 설정하여 배경 크기 일관화 */
+    font-size: 15px;
+}
+
+.process1 {
+  background-color: green; /* 배경색을 초록색으로 설정 */
+}
+
+.process2 {
+  background-color: orangered; /* 배경색을 오렌지색으로 설정 */
+}
+
+.imgtitle1,
+.imgtitle2{
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.imgdeadline1,
+.imgdeadline2{
+  font-size: 15px;
+  color: #6c757d;
+}
+
+/* 계정관리 */
+
+.logincontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.logincontainer p {
+  margin-bottom: 30px;
+}
+
+.logincontainer img {
+  width: 50px; /* 조절할 이미지의 크기 */
+  height: auto;/* 이미지의 세로 비율 유지 */
+  margin-bottom: 30px;
+}
+
+.loginp{
+  font-weight: bolder;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.logout-button,
+.delete-account-button {
+  margin-top: 20px;
+  padding: 8px 16px;
+  font-size: 16px;
+
+
+  background-color: transparent;
+  border: 1px solid lightslategrey; /* 테두리 스타일 설정 */
+  border-radius: 4px; /* 테두리 살짝 둥글게 설정 */
+  cursor: pointer;
+  
+  width: 40%; /* 가로 길이를 100%로 설정 */
+}
+.logout-button:hover, .delete-account-button:hover {
+  background-color: lightgrey;
+}
+
+/* 로그아웃 모달창 */
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.logout-popup{
+  background-color: white;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+/* 로그아웃모달창 x버튼 */
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: black;
+}
+
+/* 로그아웃모달창 네아니오 버튼 */
+.logout-yes {
+  width: 150px;
+  padding: 8px; /* 상하 8px, 좌우 20px 패딩 적용 */
+  border: 2px solid green;
+  background-color: white;
+  color: black;
+  border-radius: 3px;
+  margin-right: 10px; /* 버튼 사이 간격 조정 */
+}
+
+.logout-no {
+  width: 150px;
+  padding: 8px; /* 상하 8px, 좌우 20px 패딩 적용 */
+  background-color: green;
+  border: 2px solid green;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.logout-p{
+  padding-bottom: 50px;
+  font-weight: bold;
+}
+
+/* 탈퇴하기 모달 -> css로 팝업*/
+.withdraw-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.withdraw-popup{
+  background-color: white;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.withdraw-p{
+  padding-bottom: 50px;
+  font-weight: bold;
+ 
+}
+
+.popup-left{
+  text-align: left;
+}
+
+/* 탈퇴하기 버튼 */
+
+.withdraw-button {
+ 
+  width: 300px;
+  padding: 8px; /* 상하 8px, 좌우 20px 패딩 적용 */
+  background-color: lightgray;
+  border: 2px solid lightgray;
+  color: white;
+  border-radius: 3px;
+}
+
+
+.withdraw-button.active {
+  background-color: green;
+  border: 2px solid green;
+}
+
+
+
+.withdraw-p2{
+  padding-top: 30px;
+  padding-bottom: 70px;
+  font-weight: bold;
+}
+
+
+/* 동의체크버튼 */
+.withdraw-check-button{
+  
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid lightgray;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+}
+
+.withdraw-check-button::before {
+  content: '✔'; /* 체크 모양 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: lightgray;
+}
+
+.withdraw-check-button:checked {
+  border-color: green;
+}
+
+.withdraw-check-button:checked::before {
+  color: green;
+}
+
+/* 탈퇴확인모달 */
+.withdraw-confirm-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.confirm-popup{
+  background-color: white;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  
+}
+
+.confirm-p{
+  padding-bottom: 50px;
+  font-weight: bold;
+ 
+}
+
+.confirm-yes {
+  width: 150px;
+  padding: 8px; /* 상하 8px, 좌우 20px 패딩 적용 */
+  border: 2px solid green;
+  background-color: white;
+  color: black;
+  border-radius: 3px;
+  margin-right: 10px; /* 버튼 사이 간격 조정 */
+}
+
+.confirm-no {
+  width: 150px;
+  padding: 8px; /* 상하 8px, 좌우 20px 패딩 적용 */
+  background-color: green;
+  border: 2px solid green;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+/* 나의리뷰 버튼들 */
+.review-buttons{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+
+  row-gap: 10px; /* 행 사이 간격 조절 */
+}
+.delete-button,
+.edit-button{
+  width: 80px; /* 버튼 너비 */
+  height: 30px; /* 버튼 높이 */
+}
+
+/* 나의 리뷰 css */
+/* 가로 배치 */
+.review {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  
+}
+
+.review-right{
+  flex: 1;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column; 
+}
+
+.star-rates{
+  
+}
+
+.review-right-1,
+.review-right-2 {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+
+
+.review-buttons {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-end; /* 우측 정렬 */
+  row-gap: 10px;/*  행 사이 간격 조절 */
+  
+}
+
+.review-pros,
+.review-cons{
+    flex: 1;
+    margin-left: 10px;
+    display: flex;
+}
+
+
+/* 더보기 버튼 */
+.more-review-info {
+  border: none; /* 테두리 제거 */
+  background-color: transparent; /* 배경색 투명하게 설정 */
+  font-size: 12px; /* 작은 폰트 크기 설정 */
+  text-decoration: underline; /* 밑줄 추가 */
+  margin-left: 5px; /* 간격 조절 */
+}
+
+/* 리뷰 회색글씨 */
+.review-brand,
+.review-pro,
+.review-con,
+.review-time {
+  color: gray;
+}
+
+/* 리뷰 이미지들 */
+.review-imgs {
+  display: flex;
+  gap: 10px; /* 이미지 사이의 간격 설정 */
+}
+
+.review-image1,
+.review-image2,
+.review-image3,
+.review-image4,
+.review-image5 {
+  max-width: 100px; /* 이미지 최대 너비 설정 */
+  max-height: 100px; /* 이미지 최대 높이 설정 */
+}
+
+/* 위에서 가져온 리뷰 */
+.review {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc; /* 가로줄 추가 */
+}
+
+.review-info {
+  flex: 1;
+  margin-left: 10px;
+  display: flex;
+  
+  flex-direction: row;
+  
+}
+
+.review-name {
+  font-weight: bold;
+}
+
+
+/* 수정하기 모달 */
+
+
+.edit-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-reviewmodal {
+  max-width: 650px; /* 최대 너비 설정 */
+  width: 90%; /* 가로 크기 조정 */
+  height: 800px; /* 높이 조정 */
+  background-color: white;
+  position: relative;
+  box-sizing: border-box;
+  margin: 50px auto;
+  padding: 20px; 
+  background: #fff;
+  border-radius: 15px; /* 테두리 둥글게 만들기 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+}
+
+
+/* 닫기버튼 */
+.edit-modal-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+  
+}
+
+.close{
+  border: none; /* 테두리 없애기 */
+  background-color: transparent; /* 배경 투명하게 설정 */
+}
+
+/* 후기 수정하기 글씨 */
+ .centered-h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bolder;
+    }
+
+    .h{
+      font-size: 8px;
+    }
+/* 후기 등록하기 버튼 */
+    .review-button{
+        width: 440px;
+        height: 50px;
+        display: block; /* 버튼을 block 요소로 변경합니다. */
+        margin: 24px auto;
+        background: lightgray;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        border: 2px solid lightgray;
+        border-radius: 10px;
+    }
+    .review-button.active {
+      width: 440px;
+      height: 50px;
+      display: block; /* 버튼을 block 요소로 변경합니다. */
+      margin: 24px auto;
+      background: green;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      border: 2px solid green;
+      border-radius: 10px;
+      
+    }
+
+/* 별 */
+.stars{
+  display: flex;
+  flex-direction: column;
+  padding-top: 1px;
+}
+.h{
+  margin: 0px auto;
+    color: gray;
+}
+
+
+.five-star {
+  display: flex;
+  padding-top: 0px;
+  padding-bottom: 15px;
+  margin: 0px auto;
+}
+
+.five-star svg {
+  color: gray;
+  cursor: pointer;
+}
+
+
+.five-star .yellowStar {
+  color: orange;
+}
+
+
+/* 큰화면 별 */
+.yellowStar0 {
+  color: yellow; /* 별 모양의 색을 노란색으로 지정 */
+  cursor: pointer; /* 커서 모양을 포인터로 변경하여 마우스 호버 시 인터랙션을 나타냄 */
+}
+
+/* 내용 쓰는공간 */
+.textarea-wrapper{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+textarea{
+  resize: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+.box-explanation{
+  width: 600px;
+    height: 150px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    margin: 5px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    
+    
+}
+.box-explanation-p{
+  position: absolute; /* Add absolute position to the <p> tag */
+  bottom: -15px; /* Adjust the value to control the vertical position */
+  right: 5px; /* Adjust the value to control the horizontal position */
+  color: gray;
+}
+
+/* 좋았던 점 */
+.ex {
+  
+
+  flex: 1;
+  margin-left: 10px;
+  display: flex;
+  
+  flex-direction: row;
+}
+.explanation{
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 8px;
+}
+.pic-p{
+  font-weight: bold;
+  font-size: 18px;
+}
+.pic-div{
+  margin-left: 10px;
+}
+
+/* 사진 */
+.parent-container{
+  display: flex;
+}
+.photo-container{
+  display: inline-block;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.photo{
+  display: flex;
+  justify-content: center; /* 아이콘을 가로 방향으로 중앙에 위치시킴 */
+  align-items: center; /* 아이콘을 세로 방향으로 중앙에 위치시킴 */
+  width: 100%;
+  height: 100%;
+}
+.upload-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+
+
+/* 수정모달 전체 정렬 */
+.edit-box {
+  display: flex;
+  flex-direction: column; /* 요소들을 세로로 배치 */
+  align-items: flex-start; /* 왼쪽 정렬 */
+}
+
+
+/* 탈퇴 재확인 모달 */
+.withdraw-confirm-confirm-modal {
+  
+  transform: translate(-50%, -50%);
+  background-color: white;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+
+  padding: 50px 110px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.confirm-confirm-p {
+  padding-bottom: 50px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+
+.goto-main-page-btn {
+  padding: 10px 40px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid green;
+}
+
+.goto-main-page-btn:hover {
+  background-color: lightgray;
+}
+
+
+/* 클린레시피 리뷰작성하기버튼 */
+.writeReview-btn{
+  background-color: black;
+  color: white;
+  width: 100%; /* 가로 길이를 페이지에 맞게 설정 */
+  height: 40px; /* 버튼의 높이 설정 */
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 화살표버튼 */
+/* SideButton.css */
+
+/* 버튼 컨테이너 스타일 */
+.GotoTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end; /* 가로 정렬을 오른쪽으로 설정 */
+  align-items: center; /* 세로 방향으로 중앙 정렬 */
+  height: 100vh; /* 뷰포트 높이에 맞게 설정 */
+}
+
+/* 스크롤 버튼 스타일 */
+.gotoTopBtn {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  position: relative; /* 상대 위치 설정 */
+}
+
+.gotoTopBtn:hover {
+  opacity: 1;
+}
+
+.gotoTopBtn img {
+  max-width: 100%; /* 이미지의 최대 가로 너비를 100%로 설정 */
+  max-height: 100%; /* 이미지의 최대 세로 높이를 100%로 설정 */
+  position: absolute; /* 절대 위치 설정 */
+  top: 50%; /* 위에서 50% 위치로 조정 */
+  left: 50%; /* 왼쪽에서 50% 위치로 조정 */
+  transform: translate(-50%, -50%); /* 중앙 정렬을 위한 위치 조정 */
+}
